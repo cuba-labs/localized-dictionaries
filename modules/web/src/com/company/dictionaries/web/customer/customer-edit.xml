@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.dictionaries.web.customer.CustomerEdit"
+        datasource="customerDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.dictionaries.web.customer">
+    <dsContext>
+        <datasource id="customerDs"
+                    class="com.company.dictionaries.entity.Customer"
+                    view="customer-view"/>
+        <collectionDatasource id="dictionaryValuesDs"
+                              class="com.company.dictionaries.entity.DictionaryValue"
+                              view="dictionaryValue-view">
+            <query>
+                <![CDATA[select e from dictionaries$DictionaryValue e where e.dictionary.code = 'COUNTRY']]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="customerDs">
+            <column width="250px">
+                <field property="title"/>
+                <field optionsDatasource="dictionaryValuesDs"
+                       property="country"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

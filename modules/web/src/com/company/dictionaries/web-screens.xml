@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/company/dictionaries/screens.xml"/>
+    <screen id="dictionaries$Dictionary.browse"
+            template="com/company/dictionaries/web/dictionary/dictionary-browse.xml"/>
+    <screen id="dictionaries$Dictionary.edit"
+            template="com/company/dictionaries/web/dictionary/dictionary-edit.xml"/>
+    <screen id="dictionaries$DictionaryValue.browse"
+            template="com/company/dictionaries/web/dictionaryvalue/dictionary-value-browse.xml"/>
+    <screen id="dictionaries$DictionaryValue.edit"
+            template="com/company/dictionaries/web/dictionaryvalue/dictionary-value-edit.xml"/>
+    <screen id="dictionaries$LocalizedValue.edit"
+            template="com/company/dictionaries/web/localizedvalue/localized-value-edit.xml"/>
+    <screen id="dictionaries$Customer.browse"
+            template="com/company/dictionaries/web/customer/customer-browse.xml"/>
+    <screen id="dictionaries$Customer.edit"
+            template="com/company/dictionaries/web/customer/customer-edit.xml"/>
+</screen-config>

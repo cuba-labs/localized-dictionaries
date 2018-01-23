@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.dictionaries.web.dictionaryvalue.DictionaryValueBrowse"
+        focusComponent="dictionaryValuesTable"
+        lookupComponent="dictionaryValuesTable"
+        messagesPack="com.company.dictionaries.web.dictionaryvalue">
+    <dsContext>
+        <groupDatasource id="dictionaryValuesDs"
+                         class="com.company.dictionaries.entity.DictionaryValue"
+                         view="dictionaryValue-view">
+            <query>
+                <![CDATA[select e from dictionaries$DictionaryValue e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="dictionaryValuesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="dictionaryValuesTable"
+                datasource="dictionaryValuesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="dictionaryValuesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="code"/>
+                <column id="localizedName"/>
+                <column id="dictionary"/>
+            </columns>
+            <rows datasource="dictionaryValuesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="dictionaryValuesTable.create"/>
+                <button id="editBtn"
+                        action="dictionaryValuesTable.edit"/>
+                <button id="removeBtn"
+                        action="dictionaryValuesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

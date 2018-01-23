@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<metadata xmlns="http://schemas.haulmont.com/cuba/metadata.xsd">
+    <metadata-model namespace="dictionaries"
+                    root-package="com.company.dictionaries">
+        <class>com.company.dictionaries.entity.LocalizedValue</class>
+    </metadata-model>
+</metadata>

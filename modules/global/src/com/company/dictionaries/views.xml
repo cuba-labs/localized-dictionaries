@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.dictionaries.entity.DictionaryValue"
+          extends="_local"
+          name="dictionaryValue-view">
+        <property name="dictionary"
+                  view="_minimal">
+            <property name="code"/>
+            <property name="values"
+                      view="_minimal"/>
+        </property>
+    </view>
+    <view class="com.company.dictionaries.entity.Customer"
+          extends="_local"
+          name="customer-view">
+        <property name="country"
+                  view="_minimal"/>
+    </view>
+</views>

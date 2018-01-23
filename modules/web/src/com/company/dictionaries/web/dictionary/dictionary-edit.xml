@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.dictionaries.web.dictionary.DictionaryEdit"
+        datasource="dictionaryDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.dictionaries.web.dictionary">
+    <dsContext>
+        <datasource id="dictionaryDs"
+                    class="com.company.dictionaries.entity.Dictionary"
+                    view="_local"/>
+
+        <collectionDatasource id="localeValuesDs"
+                              class="com.company.dictionaries.entity.LocalizedValue"
+                              allowCommit="false"
+                              refreshMode="NEVER"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="dictionaryDs">
+            <column width="250px">
+                <field property="code"/>
+            </column>
+        </fieldGroup>
+
+        <table id="localeValuesTable"
+               width="300px"
+               height="250px"
+               caption="msg://com.company.dictionaries.entity/Dictionary.localeNames">
+            <buttonsPanel>
+                <button caption="mainMsg://actions.Add"
+                        invoke="addLocaleValue"/>
+                <button caption="mainMsg://actions.Remove"
+                        invoke="removeLocaleValue"/>
+            </buttonsPanel>
+            <columns>
+                <column id="locale"/>
+                <column id="value"/>
+            </columns>
+            <rows datasource="localeValuesDs"/>
+        </table>
+
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
